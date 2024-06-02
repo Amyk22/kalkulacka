@@ -10,13 +10,34 @@
 
 body {
     font-family: 'Fredoka One', cursive;
-    background-image: linear-gradient(to bottom right, rgb(111, 38, 170), rgb(209, 78, 122));
+    background-image: linear-gradient(to bottom right, #6f26aa, #d14e7a);
     overflow: hidden;
 }
 a{
     text-decoration: none;
     color: #fff;
 }
+
+#sidebar {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-image: linear-gradient(to top, #6f26aa, #d14e7a);
+    padding: 20px;
+}
+
+#sidebar h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #6f26aa;
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 20px; 
+    font-weight: bold;
+}
+
 .container{
     height: 95.6vh;
     width: 100vw;
@@ -34,9 +55,8 @@ a{
 }
 .theme-toggler{
     position: absolute;
-    top: 30px;
-    right: 30px;
-
+    top: 130px;
+    right: 100px;
     cursor: pointer;
     z-index: 1;
 }
@@ -45,15 +65,15 @@ a{
 }
 .theme-toggler::before {
     content: '\2764'; /* srdicko */
-    font-size: 30px; 
+    font-size: 80px; 
     color: #E6A4B4; 
     position: absolute;
     transform: translate(-50%, -50%);
 }
 .theme-toggler.active::before {
     content: '\2605'; /* CSS CODE - hvězdička */
-    font-size: 35px; 
-    color: #193f1394; 
+    font-size: 80px; 
+    color: #003545; 
 }
 #display{
     margin: 0 10px;
@@ -114,7 +134,6 @@ button#equal {
 }
 
   /* dark theme */
-
   .calculator.dark {
     background-color: #071115;
 }
