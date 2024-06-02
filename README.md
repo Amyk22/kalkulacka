@@ -52,9 +52,11 @@ Otevřením ‘kalkucka.html’, ‘style.css’, ‘script.js’ v textovém ed
 ## Klíčové části kódu
 HTML (kalkulacka.html) 
 Struktura HTML definuje základní rozvržení kalkulačky.
+
 CSS (style.css)
 Stylování kalkulačky a jejích prvků.
 Definování tmavého a světlého režimu.
+
 JavaScript (script.js)
 Interakce s DOM: Použití metod jako querySelector a forEach k dynamickým úpravám obsahu.
 Event handling: Přidání událostí pro kliknutí na tlačítka a stisk kláves.
