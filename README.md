@@ -1,12 +1,12 @@
 # kalkulacka
 ## Obsah
-1. [Úvod]
-2. [Požadavky]
-3. [Instalace]
-4. [Struktura Projektu]
-5. [Použití]
-6. [Klíčové části kódu]
-7. [Kontakt]
+1. Úvod
+2. Požadavky
+3. Instalace
+4. Struktura Projektu
+5. Použití
+6. Klíčové části kódu
+7. Kontakt
 
 ## Úvod
 Tento projekt je jednoduchá webová kalkulačka určena pro získání znalostí o JS, HTML a css.
@@ -40,8 +40,8 @@ kalkulacka/
 
 - **kalkulacka/**: Soubor obsahující HTML kód.
 - **style/**: Soubor obsahující css kód.
-- **script*: Soubor obsahující JavaScriptový kód.
-- ** README**: Soubor obsahující dokumentaci kódu.
+- **script**: Soubor obsahující JavaScriptový kód.
+- **README**: Soubor obsahující dokumentaci kódu.
 
 Použití
 1. **Otevření projektu v prohlížeči**
