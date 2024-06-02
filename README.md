@@ -62,7 +62,6 @@ Interakce s DOM: Použití metod jako querySelector a forEach k dynamickým úpr
 Event handling: Přidání událostí pro kliknutí na tlačítka a stisk kláves.
 
 ## Kontakt
-**Máte-li jakékoliv dotazy nebo potřebujete pomoc, kontaktujte nás na 1136@student.itgymnazium.cz.**
----
+Máte-li jakékoliv dotazy nebo potřebujete pomoc, kontaktujte nás na 1136@student.itgymnazium.cz.
 
 
