@@ -115,10 +115,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const clearLastCharacter = () => {
         display.innerText = display.innerText.slice(0, -1);
       };
+
       // Funkce pro vymazání celého displeje (delete)
       const clearCalculator = () => {
         display.innerText = "";
       };
+
       //výpočet procent (1% danné hodnoty = /100)
       if (!isNaN(key) || ['+', '-', '*', '/', '(', ')', '.', '%'].includes(key)) {
         if (key === '%') {
