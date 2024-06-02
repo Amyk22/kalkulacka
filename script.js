@@ -1,53 +1,49 @@
-// Vyhledá HTML prvek s id "display" (obrazovka kalkulačky)
 const display = document.querySelector("#display");
-// Vyhledá všechny HTML tlačítka na stránce
 const buttons = document.querySelectorAll("button");
 
 // Procházení všech tlačítek v poli "buttons"
 buttons.forEach((item) => {
   // Definování události kliknutí pro každé tlačítko
   item.onclick = () => {
-    // Pokud tlačítko má id "clear" (tlačítko pro vymazání)
+    // Pokud tlačítko má id "clear"
     if (item.id == "clear") {
       // Vymaž obsah displeje
       display.innerText = "";
     } 
-    // Pokud tlačítko má id "backspace" (tlačítko pro smazání posledního znaku)
+    // Pokud tlačítko má id "backspace"
     else if (item.id == "backspace") {
       // Převeď obsah displeje na řetězec
       let string = display.innerText.toString();
       // Odstraň poslední znak z displeje
       display.innerText = string.substr(0, string.length - 1);
     } 
-    // Pokud je displej ne prázdný a tlačítko má id "equal" (tlačítko pro výpočet)
+
+    //výpočet
     else if (display.innerText != "" && item.id == "equal") {
       try {
-        // Vyhodnoť matematický výraz a zobraz výsledek
+        // Ověření platnosti výrazu
         display.innerText = eval(display.innerText);
       } catch (error) {
-        // Pokud je chyba ve výrazu, zobraz chybovou hlášku a po 2 sekundách ji smaž
         display.innerText = "Error!";
         setTimeout(() => (display.innerText = ""), 2000);
       }
     } 
-    // Pokud je displej prázdný a tlačítko má id "equal"
+    
     else if (display.innerText == "" && item.id == "equal") {
-      // Zobraz hlášku "Empty!" a po 2 sekundách ji smaž
       display.innerText = "Empty!";
       setTimeout(() => (display.innerText = ""), 2000);
     }
-    // Pokud tlačítko má id "power" (tlačítko pro umocnění na druhou)
+
+    // Pokud tlačítko má id "power" (na druhou)
     else if (item.id == "power") {
       try {
-        // Umocni číslo na displeji na druhou a zobraz výsledek
+        // Na druhou číslo na displeji
         display.innerText = Math.pow(eval(display.innerText), 2);
       } catch {
-        // Pokud je chyba, zobraz chybovou hlášku a po 2 sekundách ji smaž
         display.innerText = "Error";
         setTimeout(() => (display.innerText = ""), 2000);
       }
     }
-    // Pokud tlačítko má id "." (desetinná tečka)
     else if (item.id == ".") {
       // Přidej desetinnou tečku, pokud aktuální výraz neobsahuje tečku v posledním čísle
       let currentText = display.innerText;
@@ -55,11 +51,9 @@ buttons.forEach((item) => {
         display.innerText += ".";
       }
     }
-    // Pokud tlačítko má id "%" (procenta)
     else if (item.id == "%") {
       let currentText = display.innerText;
       if (!currentText.endsWith("%")) {
-        // Vypočti procento z aktuální hodnoty a zobraz výsledek
         display.innerText = parseFloat(currentText) / 100;
       }
     }
@@ -90,70 +84,61 @@ themeToggleBtn.onclick = () => {
   isDark = !isDark;
 };
 
-// Možnost psát do kalkulačky klávesnicí
+//možnost psát do kalkulačky klávesnicí
 
 // Počká, až se celý dokument načte
 document.addEventListener('DOMContentLoaded', (event) => {
   // Přidá událost pro stisk klávesy
   document.addEventListener('keydown', (event) => {
-    // Získá hodnotu stisknuté klávesy
-    const key = event.key;
+      const key = event.key; // Získá hodnotu stisknuté klávesy
 
-    // Funkce pro manipulaci s displejem kalkulačky
-    const display = document.getElementById('display');
+      // Funkce pro manipulaci s displejem kalkulačky
+      const display = document.getElementById('display');
 
-    // Funkce pro přidání klávesy na displej kalkulačky
-    const calculator = (key) => {
-      display.innerText += key;
-    };
+      // Funkce pro výpočty
+      const calculator = (key) => {
+        display.innerText += key;
+      };
 
-    // Funkce pro vyhodnocení výrazu na displeji kalkulačky
-    const calculate = () => {
-      try {
-        // Vyhodnoť výraz a zobraz výsledek
-        eval(display.innerText);
-        display.innerText = eval(display.innerText);
-      } catch (error) {
-        // Pokud je chyba, zobraz chybovou hlášku a po 2 sekundách ji smaž
-        display.innerText = "Error!";
-        setTimeout(() => (display.innerText = ""), 2000);
-      }
-    };
-
-    // Funkce pro smazání posledního znaku (backspace)
-    const clearLastCharacter = () => {
-      display.innerText = display.innerText.slice(0, -1);
-    };
-
-    // Funkce pro vymazání celého displeje (delete)
-    const clearCalculator = () => {
-      display.innerText = "";
-    };
-
-    // Pokud stisknutá klávesa je číslo nebo operátor
-    if (!isNaN(key) || ['+', '-', '*', '/', '(', ')', '.', '%'].includes(key)) {
-      if (key === '%') {
-        let currentText = display.innerText;
-        if (!currentText.endsWith("%")) {
-          display.innerText = parseFloat(currentText) / 100;
+      // Funkce pro vyhodnocení výrazu
+      const calculate = () => {
+        try {
+            // Kontrola platnosti výrazu pomocí eval()
+            eval(display.innerText); // Pokusí se vyhodnotit výraz
+            display.innerText = eval(display.innerText); // Pokud je vše v pořádku, vyhodnotí výraz a zobrazí výsledek
+        } catch (error) {
+            display.innerText = "Error!"; // Pokud je výraz nesprávně zapsán, zobrazí chybu
+            setTimeout(() => (display.innerText = ""), 2000); // Po 2 sekundách vymaže chybové hlášení
         }
-      } else {
-        // Přidá hodnotu klávesy na displej
-        calculator(key);
+      };
+      // Funkce pro smazání posledního znaku (backspace)
+      const clearLastCharacter = () => {
+        display.innerText = display.innerText.slice(0, -1);
+      };
+      // Funkce pro vymazání celého displeje (delete)
+      const clearCalculator = () => {
+        display.innerText = "";
+      };
+      //výpočet procent (1% danné hodnoty = /100)
+      if (!isNaN(key) || ['+', '-', '*', '/', '(', ')', '.', '%'].includes(key)) {
+        if (key === '%') {
+          let currentText = display.innerText;
+          if (!currentText.endsWith("%")) {
+            display.innerText = parseFloat(currentText) / 100;
+          }
+        } else {
+          calculator(key); // Přidá hodnotu klávesy na displej
+        }
+      } 
+      else if (key === 'Enter') {
+        event.preventDefault(); // Předejde výchozímu chování Enter (zajistí že se to nebude mazat)
+        calculate(); // Vyhodnotí výraz
+      } 
+      else if (key === 'Backspace') {
+        clearLastCharacter(); // Smaže poslední znak
+      } 
+      else if (key === 'Delete') {
+        clearCalculator(); // Vymaže celý displej
       }
-    } 
-    // Pokud je stisknutá klávesa Enter, vyhodnoť výraz
-    else if (key === 'Enter') {
-      event.preventDefault();
-      calculate();
-    } 
-    // Pokud je stisknutá klávesa Backspace, smaž poslední znak
-    else if (key === 'Backspace') {
-      clearLastCharacter();
-    } 
-    // Pokud je stisknutá klávesa Delete, vymaž celý displej
-    else if (key === 'Delete') {
-      clearCalculator();
-    }
   });
 });
