@@ -21,10 +21,10 @@ Tento projekt je jednoduchá webová kalkulačka určena pro získání znalost�
     git clone https://github.com/Amyk22/kalkulacka.git  
     cd kalkulacka
     ```
-2. **Manuální stažení**
+2. **Manuální stažení: **
 Pokud máte přístup ke souborům fyzicky. Stáhněte je a otevřete ve webovém prohlížeči.
 
-3. **Otevření souboru**
+3. **Otevření souboru: **
 Pokud se soubor ‘kalkulacka.html’ nachází ve vašem počítači, otevřete ho ve vašem webovém prohlížeči. 
 
 ## Struktura Projektu
