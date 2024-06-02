@@ -43,7 +43,7 @@ kalkulacka/
 - **script**: Soubor obsahující JavaScriptový kód.
 - **README**: Soubor obsahující dokumentaci kódu.
 
-Použití
+## Použití
 1. **Otevření projektu v prohlížeči**
 Spuštěním souboru ‘kalkulacka.html’ ve webovém prohlížeči zobrazíme projekt jako celek ve formě fungující kalkulačky.
 2. **Otevření projektu v textovém editoru**
